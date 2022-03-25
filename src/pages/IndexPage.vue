@@ -1,22 +1,19 @@
 <template>
   <q-page class="flex flex-center bg-grey-2">
     <div class="bg-white q-pa-sm shadow-2">
-      <q-item class="user1 bg-white shadow-2" style="border-radius: 3px">
+      <q-item v-for="id in posts" v-bind:key="id" class="user1 bg-white shadow-2" style="border-radius: 3px">
         <q-item-label style="text-transform: initial" caption></q-item-label>
         <q-item-section avatar>
           <q-avatar>
-            <img src="" />
+            <img :src="id.img" />
           </q-avatar>
         </q-item-section>
         <q-item-section>
-          <q-item-label></q-item-label>
+          <q-item-label>{{id.username}}</q-item-label>
         </q-item-section>
         <q-btn round unelevated icon="mdi-dots-vertical" />
+        <img name="q-mb-lg" :src="id.img" />
       </q-item>
-      <q-img src=""
-        style="height: 425px; width: 425px"
-      >
-      </q-img>
       <q-item class="q-pa-xs bg-white shadow-2" style="border-radius: 3px">
         <q-btn round unelevated icon="mdi-heart" />
         <q-btn round unelevated icon="mdi-message-outline" />
